@@ -1,0 +1,138 @@
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #f7f8fa 100%);
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #1a237e;
+  letter-spacing: -1px;
+}
+
+a {
+  color: #1976d2;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #1565c0;
+}
+
+button,
+.MuiButton-root {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08) !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 10px 28px !important;
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%) !important;
+  color: #fff !important;
+  font-size: 1.08rem !important;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover,
+.MuiButton-root:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%) !important;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15) !important;
+}
+
+.MuiPaper-root {
+  border-radius: 18px !important;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.07) !important;
+  background: #fff !important;
+  padding: 32px !important;
+}
+
+.MuiCard-root {
+  border-radius: 18px !important;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.07) !important;
+  background: #fff !important;
+  padding: 24px 0 !important;
+}
+
+.MuiTextField-root {
+  margin-bottom: 22px !important;
+}
+
+.MuiAppBar-root {
+  background: #fff !important;
+  color: #1976d2 !important;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.04) !important;
+  border-bottom: 1px solid #e3eafc !important;
+}
+
+.MuiToolbar-root {
+  min-height: 64px !important;
+  padding: 0 24px !important;
+}
+
+.MuiTypography-root {
+  color: #222 !important;
+}
+
+.MuiGrid-root {
+  margin: 0 !important;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
