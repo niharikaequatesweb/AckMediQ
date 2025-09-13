@@ -30,19 +30,19 @@ export default function App() {
         </Typography>
       </Box>
       {/* Main Layout */}
-      <Grid container spacing={0} sx={{ width: '100vw', height: 'calc(100vh - 120px)', m: 0, p: 0 }}>
+      <Grid container spacing={0} sx={{ width: '100vw', height: 'calc(100vh - 120px)', m: 0, p: 0, overflow: 'hidden' }}>
         {/* Left: Meeting Window */}
-        <Grid item sx={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', p: 0 }}>
+        <Grid item sx={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', p: 0, overflow: 'hidden' }}>
           <Paper elevation={0} sx={{ width: '90%', height: '80%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', bgcolor: '#fff', borderRadius: 4, boxShadow: '0 2px 16px rgba(25,118,210,0.07)', border: 'none', m: 0 }}>
             <VideocamIcon sx={{ fontSize: 72, color: '#90caf9', mb: 3 }} />
             <Typography variant="h6" color="#222" sx={{ fontWeight: 500, letterSpacing: 0.5 }}>Meeting Window</Typography>
           </Paper>
         </Grid>
         {/* Right: Conversation with inline suggestions */}
-        <Grid item sx={{ width: '50%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', p: 0 }}>
-          <Paper elevation={0} sx={{ width: '100%', height: '100%', p: 3, overflowY: 'auto', bgcolor: '#fff', borderRadius: 4, boxShadow: '0 2px 16px rgba(25,118,210,0.07)', border: 'none', m: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Grid item sx={{ width: '50%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', p: 0, overflow: 'hidden' }}>
+          <Paper elevation={0} sx={{ width: '100%', height: '100%', p: 3, bgcolor: '#fff', borderRadius: 4, boxShadow: '0 2px 16px rgba(25,118,210,0.07)', border: 'none', m: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', overflow: 'hidden' }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 600, letterSpacing: 0.5, mb: 2, color: '#1976d2' }}>Conversation</Typography>
-            <List sx={{ width: '100%' }}>
+            <List sx={{ width: '100%', overflow: 'hidden' }}>
               {transcriptMock.map((line, idx) => (
                 <React.Fragment key={idx}>
                   <ListItem sx={{ mb: 2, borderBottom: '1px solid #f0f0f0', pb: 2, borderRadius: 2, bgcolor: '#f8f9fa' }}>
@@ -66,12 +66,14 @@ export default function App() {
               ))}
             </List>
           </Paper>
+          {/* Bottom Buttons inside right section */}
+          <Box sx={{ p: 3, width: '100%', display: 'flex', justifyContent: 'center', bgcolor: 'transparent', borderTop: 'none', borderRadius: 0, mb: 0 }}>
+            <Button variant="contained" color="primary" sx={{ textTransform: 'none', fontWeight: 600, borderRadius: 3, boxShadow: '0 2px 8px rgba(25,118,210,0.08)', mr: 2 }} onClick={() => setSummaryOpen(true)}>End Call & Show Summary</Button>
+            <Button variant="contained" color="secondary" sx={{ textTransform: 'none', fontWeight: 600, borderRadius: 3, boxShadow: '0 2px 8px rgba(25,118,210,0.08)' }}>Generate Report</Button>
+          </Box>
         </Grid>
       </Grid>
-      {/* Bottom Bar */}
-      <Box sx={{ p: 3, display: 'flex', justifyContent: 'flex-end', bgcolor: 'transparent', borderTop: 'none', width: '100%', borderRadius: 0, mb: 0 }}>
-        <Button variant="contained" color="primary" sx={{ textTransform: 'none', fontWeight: 600, borderRadius: 3, boxShadow: '0 2px 8px rgba(25,118,210,0.08)' }} onClick={() => setSummaryOpen(true)}>End Call & Show Summary</Button>
-      </Box>
+      {/* Removed global bottom bar, buttons now inside right section */}
       {/* Session Summary Modal */}
       <Modal open={summaryOpen} onClose={() => setSummaryOpen(false)}>
         <Paper sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, p: 4, bgcolor: '#fff', borderRadius: 6, boxShadow: '0 8px 32px 0 rgba(25,118,210,0.12)', border: '1px solid #eaeaea' }}>
